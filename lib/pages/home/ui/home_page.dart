@@ -157,17 +157,14 @@ class HomePage extends StatelessWidget {
                     height: 200,
                     color: Colors.black,
                   ),
-
                   const HorizontalSpace(
                     size: 40,
                   ),
-
                   Container(
                     width: 400,
                     height: 200,
                     color: Colors.black,
                   ),
-                  
                   const HorizontalSpace(
                     size: 40,
                   ),
@@ -182,6 +179,125 @@ class HomePage extends StatelessWidget {
 
             const VerticalSpace(
               size: 500,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 75),
+              child: Row(
+                children: [
+                  Container(
+                    width: 900,
+                    height: 600,
+                    color: Colors.black,
+                  ),
+                  const HorizontalSpace(
+                    size: 40,
+                  ),
+                  Container(
+                    width: 300,
+                    height: 200,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+            ),
+
+            const VerticalSpace(
+              size: 300,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 75),
+              child: Row(
+                children: [
+                  Container(
+                    width: 300,
+                    height: 200,
+                    color: Colors.black,
+                  ),
+                  const HorizontalSpace(
+                    size: 40,
+                  ),
+                  Container(
+                    width: 900,
+                    height: 600,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+            ),
+
+            const VerticalSpace(
+              size: 400,
+            ),
+
+            Container(
+              width: 1300,
+              height: 600,
+              color: Colors.black,
+            ),
+
+            const VerticalSpace(
+              size: 400,
+            ),
+
+            Container(
+              width: double.maxFinite,
+              height: 520,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.3),
+                border: Border(
+                  top: BorderSide(
+                    color: Colors.black.withOpacity(0.2),
+                    width: 0.5,
+                  ),
+                ),
+              ),
+
+
+              child: Center(
+                child: Container(
+                  height: 300,
+                  padding: EdgeInsetsDirectional.all(50),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        splashColor: Colors.transparent,
+                        onTap: () => Navigator.popUntil(context,
+                            ModalRoute.withName(Navigator.defaultRouteName)),
+                        child: Text(
+                          "HENRY",
+                          style: titleTextStyle,
+                        ),
+                      ),
+                
+                      const HorizontalSpace(
+                        size: 100,
+                      ),
+                
+                
+                      Container(
+                        width: 400,
+                        height: 200,
+                        color: Colors.black,
+                      ),
+                
+                      const HorizontalSpace(
+                        size: 140,
+                      ),
+                
+                      Container(
+                        width: 500,
+                        height: 200,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),
