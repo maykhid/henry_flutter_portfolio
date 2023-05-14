@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:henry_flutter_portfolio/components/color.dart';
 import 'package:henry_flutter_portfolio/pages/home/ui/home_page.dart';
 import 'package:henry_flutter_portfolio/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // Wrapping the app with a builder method makes breakpoints
       // accessible throughout the widget tree.
+      theme: ThemeData(fontFamily: 'Hanken Grotesk'),
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
         breakpoints: [
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
                     // A widget that limits the maximum width.
                     // This is used to create a gutter area on either side of the content.
                     maxWidth: 1200,
-                    background: Container(color: const Color(0xFFF5F5F5)),
+                    background: Container(color: backgroundPrimary),
                     child: ResponsiveScaledBox(
                         // ResponsiveScaledBox renders its child with a FittedBox set to the `width` value.
                         // Set the fixed width value based on the active breakpoint.
