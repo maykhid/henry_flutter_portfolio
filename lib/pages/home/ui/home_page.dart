@@ -46,6 +46,7 @@ class HomePage extends StatelessWidget {
                       child: Container(
                         alignment: Alignment.centerRight,
                         child: Wrap(
+                          spacing: 40,
                           children: <Widget>[
                             TextButton(
                               onPressed: () => Navigator.popUntil(
@@ -59,10 +60,6 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
 
-                            const HorizontalSpace(
-                              size: 40,
-                            ),
-
                             TextButton(
                               onPressed: () {},
                               // style: menuButtonStyle,
@@ -70,10 +67,6 @@ class HomePage extends StatelessWidget {
                                 "About",
                                 style: subtitleTextStyle,
                               ),
-                            ),
-
-                            const HorizontalSpace(
-                              size: 40,
                             ),
 
                             TextButton(
@@ -129,14 +122,14 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Henry Ifebunandu—Mobile Developer',
+                      'Henry Ifebunandu—Mobile App Developer',
                       style: subtitleTextStyle,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
                     Text(
-                      'With a focus on startups, I transform ideas into polished mobile apps that provide seamless user experiences.',
+                      'I transform ideas into polished mobile apps that provide seamless user experiences.',
                       style: headlineTextStyle,
                     ),
                   ],
@@ -151,80 +144,54 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Wrap(
-                children: [
-                  Container(
-                    width: 400,
-                    height: 200,
-                    color: Colors.black,
-                  ),
-                  const HorizontalSpace(
-                    size: 40,
-                  ),
-                  Container(
-                    width: 400,
-                    height: 200,
-                    color: Colors.black,
-                  ),
-                  const HorizontalSpace(
-                    size: 40,
-                  ),
-                  Container(
-                    width: 400,
-                    height: 200,
-                    color: Colors.black,
-                  ),
+                spacing: 40,
+                
+                children: const [
+                  MyAbility(),
+                  MyAbility(),
+                  MyAbility(),
                 ],
               ),
             ),
 
             const VerticalSpace(
-              size: 500,
+              size: 200,
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 75),
-              child: Row(
-                children: [
-                  Container(
-                    width: 900,
-                    height: 600,
-                    color: Colors.black,
-                  ),
-                  const HorizontalSpace(
-                    size: 40,
-                  ),
-                  Container(
-                    width: 300,
-                    height: 200,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 40,
+              runSpacing: 50,
+              
+
+              children: const [
+                ProductImage(),
+
+                //
+                ProductDescription(),
+              ],
             ),
 
             const VerticalSpace(
               size: 300,
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 75),
-              child: Row(
-                children: [
-                  Container(
-                    width: 300,
-                    height: 200,
-                    color: Colors.black,
-                  ),
-                  const HorizontalSpace(
-                    size: 40,
-                  ),
-                  Container(
-                    width: 900,
-                    height: 600,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 40,
+              runSpacing: 50,
+              direction: Axis.horizontal,
+              children: const [
+                ProductDescription(),
+
+                //
+                // HorizontalSpace(
+                //   size: 40,
+                // ),
+
+                //
+                ProductImage(),
+              ],
             ),
 
             const VerticalSpace(
@@ -245,7 +212,7 @@ class HomePage extends StatelessWidget {
               width: double.maxFinite,
               height: 520,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.3),
+                color: Colors.transparent,
                 border: Border(
                   top: BorderSide(
                     color: Colors.black.withOpacity(0.2),
@@ -253,12 +220,10 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-
-
               child: Center(
                 child: Container(
                   height: 300,
-                  padding: EdgeInsetsDirectional.all(50),
+                  padding: const EdgeInsetsDirectional.all(50),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -273,22 +238,17 @@ class HomePage extends StatelessWidget {
                           style: titleTextStyle,
                         ),
                       ),
-                
                       const HorizontalSpace(
                         size: 100,
                       ),
-                
-                
                       Container(
                         width: 400,
                         height: 200,
                         color: Colors.black,
                       ),
-                
                       const HorizontalSpace(
                         size: 140,
                       ),
-                
                       Container(
                         width: 500,
                         height: 200,
@@ -301,6 +261,102 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ProductDescription extends StatelessWidget {
+  const ProductDescription({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      height: 200,
+      // color: Colors.black,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.build_circle,
+                size: 40,
+              ),
+              const HorizontalSpace(),
+              Text(
+                'Product Description',
+                style: subHeadline,
+              ),
+            ],
+          ),
+          const VerticalSpace(
+            size: 12,
+          ),
+          Text(
+            'Simplifying and redesigning a learner experience platform.',
+            style: headlineSecondaryTextStyle,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProductImage extends StatelessWidget {
+  const ProductImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return UiScaler(
+      alignment: Alignment.center,
+      child: Container(
+        width: 900,
+        height: 600,
+        color: Colors.black,
+      ),
+    );
+  }
+}
+
+class MyAbility extends StatelessWidget {
+  const MyAbility({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 400,
+      height: 200,
+      // color: Colors.black,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(
+            Icons.build_circle,
+            size: 40,
+          ),
+          const VerticalSpace(
+            size: 18,
+          ),
+          Text(
+            'Simplify & redesign products',
+            style: subHeadline,
+          ),
+          const VerticalSpace(
+            size: 12,
+          ),
+          Text(
+            'Often products becomes more complex than needed due to the fast pace of startups. Simplifying and redesigning the user experience can make the product more effective.',
+            style: bodyTextStyle,
+          ),
+        ],
       ),
     );
   }

@@ -18,16 +18,26 @@ TextStyle headlineTextStyle = const TextStyle(
     fontFamily: 'Hanken Grotesk');
 
 TextStyle headlineSecondaryTextStyle = const TextStyle(
-    fontSize: 20,
+    fontSize: 30,
     color: textPrimary,
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w500,
     fontFamily: 'Hanken Grotesk');
 
 TextStyle subtitleTextStyle = const TextStyle(
-    fontSize: 12,
+    fontSize: 16,
     color: textSecondary,
-    // letterSpacing: 1,
+   fontWeight: FontWeight.w300,
+    fontFamily: 'Hanken Grotesk');
+
+TextStyle subHeadline = const TextStyle(
+    fontSize: 18,
+    color: textPrimary,
+    fontWeight: FontWeight.w500,
     fontFamily: 'Hanken Grotesk');
 
 TextStyle bodyTextStyle = const TextStyle(
-    fontSize: 14, color: textPrimary, fontFamily: 'Hanken Grotesk');
+  fontSize: 16,
+  color: textPrimary,
+  fontFamily: 'Hanken Grotesk',
+  fontWeight: FontWeight.w300,
+);
