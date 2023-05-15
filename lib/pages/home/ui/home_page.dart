@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:henry_flutter_portfolio/components/components.dart';
-import 'package:henry_flutter_portfolio/components/ui_scaler.dart';
+
 import 'package:responsive_framework/responsive_breakpoints.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,90 +24,7 @@ class HomePage extends StatelessWidget {
               size: 50,
             ),
 
-            UiScaler(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    InkWell(
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      onTap: () => Navigator.popUntil(context,
-                          ModalRoute.withName(Navigator.defaultRouteName)),
-                      child: Text(
-                        "HENRY",
-                        style: titleTextStyle,
-                      ),
-                    ),
-                    Flexible(
-                      child: Container(
-                        alignment: Alignment.centerRight,
-                        child: Wrap(
-                          spacing: 40,
-                          children: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.popUntil(
-                                  context,
-                                  ModalRoute.withName(
-                                      Navigator.defaultRouteName)),
-                              // style: menuButtonStyle,
-                              child: Text(
-                                "Home",
-                                style: subtitleTextStyle,
-                              ),
-                            ),
-
-                            TextButton(
-                              onPressed: () {},
-                              // style: menuButtonStyle,
-                              child: Text(
-                                "About",
-                                style: subtitleTextStyle,
-                              ),
-                            ),
-
-                            TextButton(
-                              onPressed: () => Navigator.pushNamed(
-                                  context, 'TypographyPage'),
-                              // style: menuButtonStyle,
-                              child: Text(
-                                "Contact",
-                                style: subtitleTextStyle,
-                              ),
-                            ),
-
-                            // const HorizontalSpace(
-                            //   size: 100,
-                            // ),
-                            // TextButton(
-                            //   onPressed: () {},
-                            //   // style: menuButtonStyle,
-                            //   child: const Text(
-                            //     "ABOUT",
-                            //   ),
-                            // ),
-                            // TextButton(
-                            //   onPressed: () {},
-                            //   // style: menuButtonStyle,
-                            //   child: const Text(
-                            //     "CONTACT",
-                            //   ),
-                            // ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    // const HorizontalSpace(
-                    //   size: 100,
-                    // ),
-                  ],
-                ),
-              ),
-            ),
+            const CustomMenuBar(),
 
             const VerticalSpace(
               size: 300,
@@ -145,7 +62,6 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Wrap(
                 spacing: 40,
-                
                 children: const [
                   MyAbility(),
                   MyAbility(),
@@ -162,8 +78,6 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: WrapCrossAlignment.center,
               spacing: 40,
               runSpacing: 50,
-              
-
               children: const [
                 ProductImage(),
 

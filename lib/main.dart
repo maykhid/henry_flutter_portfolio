@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:henry_flutter_portfolio/components/color.dart';
+import 'package:henry_flutter_portfolio/pages/about/ui/about_page.dart';
 import 'package:henry_flutter_portfolio/pages/home/ui/home_page.dart';
 import 'package:henry_flutter_portfolio/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -78,8 +79,8 @@ class MyApp extends StatelessWidget {
       case '/':
       case HomePage.name:
         return const HomePage();
-      // case PostPage.name:
-      //   return const PostPage();
+      case AboutPage.name:
+        return const AboutPage();
       // case TypographyPage.name:
       //   return const TypographyPage();
       default:
