@@ -41,3 +41,18 @@ TextStyle bodyTextStyle = const TextStyle(
   fontFamily: 'Hanken Grotesk',
   fontWeight: FontWeight.w300,
 );
+
+
+TextStyle bodyTextStyle2 = const TextStyle(
+  fontSize: 24,
+  color: textPrimary,
+  fontFamily: 'Hanken Grotesk',
+  fontWeight: FontWeight.w300,
+);
+
+TextStyle bodyTextStyle2Bold = const TextStyle(
+  fontSize: 24,
+  color: textPrimary,
+  fontFamily: 'Hanken Grotesk',
+  fontWeight: FontWeight.w400,
+);

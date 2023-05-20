@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:henry_flutter_portfolio/components/components.dart';
 import 'package:henry_flutter_portfolio/pages/about/ui/about_page.dart';
+import 'package:henry_flutter_portfolio/pages/contact/ui/contact_page.dart';
 
 class CustomMenuBar extends StatelessWidget {
   const CustomMenuBar({
@@ -23,7 +24,7 @@ class CustomMenuBar extends StatelessWidget {
               onTap: () => Navigator.popUntil(
                   context, ModalRoute.withName(Navigator.defaultRouteName)),
               child: Text(
-                "HENRY",
+                "{  HENRY  }",
                 style: titleTextStyle,
               ),
             ),
@@ -53,7 +54,7 @@ class CustomMenuBar extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () =>
-                          Navigator.pushNamed(context, AboutPage.name),
+                          Navigator.pushNamed(context, ContactPage.name),
                       // style: menuButtonStyle,
                       child: Text(
                         "Contact",

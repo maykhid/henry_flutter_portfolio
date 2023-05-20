@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:henry_flutter_portfolio/components/color.dart';
 import 'package:henry_flutter_portfolio/pages/about/ui/about_page.dart';
+import 'package:henry_flutter_portfolio/pages/contact/ui/contact_page.dart';
 import 'package:henry_flutter_portfolio/pages/home/ui/home_page.dart';
 import 'package:henry_flutter_portfolio/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -77,14 +78,15 @@ class MyApp extends StatelessWidget {
   Widget buildPage(String name) {
     switch (name) {
       case '/':
+      return const HomePage();
       case HomePage.name:
         return const HomePage();
       case AboutPage.name:
         return const AboutPage();
-      // case TypographyPage.name:
-      //   return const TypographyPage();
+      case ContactPage.name:
+        return const ContactPage();
       default:
-        return const SizedBox.shrink();
+        return const HomePage();
     }
   }
 }
