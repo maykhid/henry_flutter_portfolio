@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Wrap(
-                spacing: 25,
+                spacing: 90,
                 runSpacing: 20,
                 runAlignment: WrapAlignment.start,
                 children: const [
