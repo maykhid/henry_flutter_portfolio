@@ -23,10 +23,11 @@ class CustomMenuBar extends StatelessWidget {
               splashColor: Colors.transparent,
               onTap: () => Navigator.popUntil(
                   context, ModalRoute.withName(Navigator.defaultRouteName)),
-              child: Text(
-                "{  HENRY  }",
-                style: titleTextStyle,
-              ),
+              // child: Text(
+              //   "print(HENRY)",
+              //   style: titleTextStyle,
+              // ),
+              child: const Name(),
             ),
             Flexible(
               child: Container(
@@ -67,6 +68,23 @@ class CustomMenuBar extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Name extends StatelessWidget {
+  const Name({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        text: 'print',
+        style: const TextStyle(fontSize: 10, color: Colors.black),
+        children: [TextSpan(text: '(HENRY)', style: titleTextStyle)],
       ),
     );
   }

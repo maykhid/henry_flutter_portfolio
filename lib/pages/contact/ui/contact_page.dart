@@ -33,7 +33,7 @@ class ContactPage extends StatelessWidget {
                 runSpacing: 50,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 80),
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
                     child: SizedBox(
                       width: 720,
                       child: Column(
@@ -70,54 +70,57 @@ class ContactPage extends StatelessWidget {
               size: 150,
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 80),
-              child: SizedBox(
-                height: 200,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  // crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // first row
-                    Wrap(
-                      runSpacing: 40,
-                      children: const [
-                        ContactInfo(
-                          prompt: 'Send me an email',
-                          info: 'henryifebunandu@gmail.com',
-                        ),
-                        HorizontalSpace(
-                          size: 130,
-                        ),
-                        ContactInfo(
-                          prompt: 'Chat on WhatsApp ',
-                          info: '+234 (0)8189957568',
-                        ),
-                      ],
-                    ),
-
-                    // SizedBox(height: 40,),
-
-                    // second row
-                    Wrap(
-                      runSpacing: 30,
-                      alignment: WrapAlignment.start,
-                      runAlignment: WrapAlignment.start,
-                      children: const [
-                        ContactInfo(
-                          prompt: 'Follow me on Twitter',
-                          info: 'twitter.com\/_maykhid',
-                        ),
-                        HorizontalSpace(
-                          size: 130,
-                        ),
-                        ContactInfo(
-                          prompt: 'Connect on LinkedIn',
-                          info: 'linkedin.com/in/henry-ifebunandu/',
-                        ),
-                      ],
-                    ),
-                  ],
+            UiScaler(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: SizedBox(
+                  height: 200,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // first row
+                      Wrap(
+                        // runSpacing: 40,
+                        children: const [
+                          ContactInfo(
+                            prompt: 'Send me an email',
+                            info: 'henryifebunandu@gmail.com',
+                          ),
+                          HorizontalSpace(
+                            size: 130,
+                          ),
+                          ContactInfo(
+                            prompt: 'Chat on WhatsApp ',
+                            info: '+234 (0)8189957568',
+                          ),
+                        ],
+                      ),
+            
+                      // SizedBox(height: 40,),
+            
+                      // second row
+                      Wrap(
+                        // runSpacing: 30,
+                        alignment: WrapAlignment.start,
+                        runAlignment: WrapAlignment.start,
+                        children: const [
+                          ContactInfo(
+                            prompt: 'Follow me on Twitter',
+                            info: 'twitter.com/_maykhid',
+                          ),
+                          HorizontalSpace(
+                            size: 130,
+                          ),
+                          ContactInfo(
+                            prompt: 'Connect on LinkedIn',
+                            info: 'linkedin.com/in/henry-ifebunandu/',
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

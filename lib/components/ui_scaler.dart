@@ -7,7 +7,7 @@ class UiScaler extends StatelessWidget {
     super.key,
     required this.child,
     required this.alignment,
-    this.referenceHeight = 700,
+    this.referenceHeight = 500,
   });
 
   final int referenceHeight;

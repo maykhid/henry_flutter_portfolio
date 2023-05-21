@@ -9,9 +9,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isdesk = ResponsiveBreakpoints.of(context).isDesktop;
-    final isTab = ResponsiveBreakpoints.of(context).isTablet;
-    final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+    final responsiveBreakPoint = ResponsiveBreakpoints.of(context);
+    final isdesk = responsiveBreakPoint.isDesktop;
+    final isTab = responsiveBreakPoint.isTablet;
+    final isMobile = responsiveBreakPoint.isMobile;
+
+    final isLessThanTab = responsiveBreakPoint.smallerThan(TABLET);
+    print(isLessThanTab);
 
     return Scaffold(
       backgroundColor: backgroundPrimary,
@@ -26,15 +30,16 @@ class HomePage extends StatelessWidget {
 
             const CustomMenuBar(),
 
-            const VerticalSpace(
-              size: 300,
+            VerticalSpace(
+              size: isLessThanTab ? 150 : 300,
             ),
 
             // Desc
             UiScaler(
               alignment: Alignment.topCenter,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 150),
+                padding:
+                    EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -54,14 +59,16 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            const VerticalSpace(
-              size: 500,
+            VerticalSpace(
+              size: isLessThanTab ? 120 : 350,
             ),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Wrap(
-                spacing: 40,
+                spacing: 25,
+                runSpacing: 20,
+                runAlignment: WrapAlignment.start,
                 children: const [
                   MyAbility(),
                   MyAbility(),
@@ -70,42 +77,49 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
-            const VerticalSpace(
-              size: 200,
+            VerticalSpace(
+              size: isLessThanTab ? 100 : 280,
             ),
 
-            Wrap(
-              crossAxisAlignment: WrapCrossAlignment.center,
-              spacing: 40,
-              runSpacing: 50,
-              children: const [
-                ProductImage(),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 40,
+                runSpacing: isLessThanTab ? 0 : 30,
+                runAlignment: WrapAlignment.center,
+                children: const [
+                  ProductImage(),
 
-                //
-                ProductDescription(),
-              ],
+                  //
+                  ProductDescription(),
+                ],
+              ),
             ),
 
-            const VerticalSpace(
-              size: 300,
+            VerticalSpace(
+              size: isLessThanTab ? 100 : 150,
             ),
 
-            Wrap(
-              crossAxisAlignment: WrapCrossAlignment.center,
-              spacing: 40,
-              runSpacing: 50,
-              direction: Axis.horizontal,
-              children: const [
-                ProductDescription(),
-
-                //
-                // HorizontalSpace(
-                //   size: 40,
-                // ),
-
-                //
-                ProductImage(),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
+              child: Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
+                spacing: 40,
+                runSpacing: isLessThanTab ? 0 : 30,
+                direction: Axis.horizontal,
+                children: const [
+                  ProductDescription(),
+            
+                  //
+                  // HorizontalSpace(
+                  //   size: 40,
+                  // ),
+            
+                  //
+                  ProductImage(),
+                ],
+              ),
             ),
 
             const VerticalSpace(
@@ -129,6 +143,7 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
     super.key,
@@ -136,34 +151,37 @@ class ProductDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
-      height: 200,
-      // color: Colors.black,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Icon(
-                Icons.build_circle,
-                size: 40,
-              ),
-              const HorizontalSpace(),
-              Text(
-                'Product Description',
-                style: subHeadline,
-              ),
-            ],
-          ),
-          const VerticalSpace(
-            size: 12,
-          ),
-          Text(
-            'Simplifying and redesigning a learner experience platform.',
-            style: headlineSecondaryTextStyle,
-          ),
-        ],
+    return UiScaler(
+      alignment: Alignment.center,
+      child: SizedBox(
+        width: 300,
+        height: 200,
+        // color: Colors.black,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const Icon(
+                  Icons.build_circle,
+                  size: 40,
+                ),
+                const HorizontalSpace(),
+                Text(
+                  'Product Description',
+                  style: subHeadline,
+                ),
+              ],
+            ),
+            const VerticalSpace(
+              size: 12,
+            ),
+            Text(
+              'Simplifying and redesigning a learner experience platform.',
+              style: headlineSecondaryTextStyle,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -176,11 +194,15 @@ class ProductImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsiveBreakPoint = ResponsiveBreakpoints.of(context);
+    final isLessThanTab = responsiveBreakPoint.smallerThan(TABLET);
+    final isLessThanDesktop = responsiveBreakPoint.smallerThan(DESKTOP);
+
     return UiScaler(
       alignment: Alignment.center,
       child: Container(
-        width: 900,
-        height: 600,
+        width: isLessThanDesktop ? 700 : 900,
+        height: isLessThanDesktop ? 250 : 600,
         color: Colors.black,
       ),
     );
@@ -194,32 +216,35 @@ class MyAbility extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 400,
-      height: 200,
-      // color: Colors.black,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Icon(
-            Icons.build_circle,
-            size: 40,
-          ),
-          const VerticalSpace(
-            size: 18,
-          ),
-          Text(
-            'Simplify & redesign products',
-            style: subHeadline,
-          ),
-          const VerticalSpace(
-            size: 12,
-          ),
-          Text(
-            'Often products becomes more complex than needed due to the fast pace of startups. Simplifying and redesigning the user experience can make the product more effective.',
-            style: bodyTextStyle,
-          ),
-        ],
+    return UiScaler(
+      alignment: Alignment.center,
+      child: SizedBox(
+        width: 350,
+        // height: 200,
+        // color: Colors.black,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Icon(
+              Icons.build_circle,
+              size: 40,
+            ),
+            const VerticalSpace(
+              size: 18,
+            ),
+            Text(
+              'Simplify & redesign products',
+              style: subHeadline,
+            ),
+            const VerticalSpace(
+              size: 12,
+            ),
+            Text(
+              'Often products becomes more complex than needed due to the fast pace of startups. Simplifying and redesigning the user experience can make the product more effective.',
+              style: bodyTextStyle,
+            ),
+          ],
+        ),
       ),
     );
   }

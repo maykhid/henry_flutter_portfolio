@@ -6,3 +6,4 @@ export 'svg_images.dart';
 export 'ui_scaler.dart';
 export 'menu_bar.dart';
 export 'page_footer.dart';
+export 'button.dart';

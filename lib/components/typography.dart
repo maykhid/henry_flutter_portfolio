@@ -42,6 +42,13 @@ TextStyle bodyTextStyle = const TextStyle(
   fontWeight: FontWeight.w300,
 );
 
+TextStyle bodyTextBold = const TextStyle(
+  fontSize: 17,
+  color: textPrimary,
+  fontFamily: 'Hanken Grotesk',
+  fontWeight: FontWeight.w400,
+);
+
 
 TextStyle bodyTextStyle2 = const TextStyle(
   fontSize: 24,
