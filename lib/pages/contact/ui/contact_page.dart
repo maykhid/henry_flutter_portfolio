@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_breakpoints.dart';
 
 import '../../../components/components.dart';
 
@@ -9,6 +10,11 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsiveBreakPoint = ResponsiveBreakpoints.of(context);
+
+    final isLargerThanTab = responsiveBreakPoint.largerThan(TABLET);
+    final isLargerThanMobile = responsiveBreakPoint.largerThan(MOBILE);
+
     return Scaffold(
       backgroundColor: backgroundPrimary,
       body: SingleChildScrollView(
@@ -22,8 +28,8 @@ class ContactPage extends StatelessWidget {
 
             const CustomMenuBar(),
 
-            const VerticalSpace(
-              size: 300,
+            VerticalSpace(
+              size: isLargerThanMobile ? 300 : 100,
             ),
 
             UiScaler(
@@ -33,7 +39,8 @@ class ContactPage extends StatelessWidget {
                 runSpacing: 50,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: isLargerThanMobile ? 100 : 0),
                     child: SizedBox(
                       width: 720,
                       child: Column(
@@ -75,7 +82,7 @@ class ContactPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 80),
                 child: SizedBox(
-                  height: 200,
+                  height: isLargerThanTab ? 200 : 400,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     // crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -97,9 +104,9 @@ class ContactPage extends StatelessWidget {
                           ),
                         ],
                       ),
-            
+
                       // SizedBox(height: 40,),
-            
+
                       // second row
                       Wrap(
                         // runSpacing: 30,

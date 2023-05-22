@@ -63,17 +63,20 @@ class HomePage extends StatelessWidget {
               size: isLessThanTab ? 120 : 350,
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 0),
-              child: Wrap(
-                spacing: 90,
-                runSpacing: 20,
-                runAlignment: WrapAlignment.start,
-                children: const [
-                  MyAbility(),
-                  MyAbility(),
-                  MyAbility(),
-                ],
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: isLessThanTab ? 10 : 100),
+                child: Wrap(
+                  spacing: 50,
+                  runSpacing: isLessThanTab ? 20 : 40,
+                  runAlignment: WrapAlignment.start,
+                  children: const [
+                    MyAbility(),
+                    MyAbility(),
+                    MyAbility(),
+                  ],
+                ),
               ),
             ),
 
@@ -82,7 +85,8 @@ class HomePage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
+              padding:
+                  EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 spacing: 40,
@@ -102,7 +106,8 @@ class HomePage extends StatelessWidget {
             ),
 
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
+              padding:
+                  EdgeInsets.symmetric(horizontal: isLessThanTab ? 0 : 100.0),
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 spacing: 40,
@@ -110,12 +115,12 @@ class HomePage extends StatelessWidget {
                 direction: Axis.horizontal,
                 children: const [
                   ProductDescription(),
-            
+
                   //
                   // HorizontalSpace(
                   //   size: 40,
                   // ),
-            
+
                   //
                   ProductImage(),
                 ],
@@ -216,10 +221,13 @@ class MyAbility extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UiScaler(
-      alignment: Alignment.center,
+    final responsiveBreakPoint = ResponsiveBreakpoints.of(context);
+    final isLessThanTab = responsiveBreakPoint.smallerThan(TABLET);
+
+    return Padding(
+      padding: EdgeInsets.only(left: isLessThanTab ? 30.0 : 0),
       child: SizedBox(
-        width: 350,
+        width: 330,
         // height: 200,
         // color: Colors.black,
         child: Column(
