@@ -23,6 +23,8 @@ class _CustomMenuBarState extends State<CustomMenuBar> {
     final isMobile = responsiveBreakPoint.isMobile;
     final isLessThanTab = responsiveBreakPoint.smallerThan(TABLET);
 
+    final isBetweenMobileAndTab = responsiveBreakPoint.between(MOBILE, TABLET);
+
     Widget hamOrMenu() {
       if (isMenuDisplayed) {
         return SizedBox(
@@ -77,7 +79,7 @@ class _CustomMenuBarState extends State<CustomMenuBar> {
                 // ),
                 child: const Name(),
               ),
-              isMobile ? hamOrMenu() : const MenuItems(),
+              isMobile || isBetweenMobileAndTab ? hamOrMenu() : const MenuItems(),
             ],
           ),
         ),
@@ -97,7 +99,6 @@ class MenuItems extends StatelessWidget {
 
     final isLargerThanTab = responsiveBreakPoint.largerThan(TABLET);
     final isLargerThanMobile = responsiveBreakPoint.largerThan(MOBILE);
-    
 
     double spacing() {
       if (isLargerThanTab) return 50;

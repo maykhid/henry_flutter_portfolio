@@ -34,53 +34,45 @@ class ContactPage extends StatelessWidget {
 
             UiScaler(
               alignment: Alignment.topCenter,
-              child: Wrap(
-                spacing: 50,
-                runSpacing: 50,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: isLargerThanMobile ? 100 : 0),
-                    child: SizedBox(
-                      width: 720,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Let\'s Chat!',
-                            style: headlineTextStyle,
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          SizedBox(
-                            // width: 1800,
-                            // height: 200,
-                            // color: Colors.black,
-                            child: Text(
-                              '''Looking forward to meet you and learn more about your business and the design challenges it's facing. Feel free to get in touch for inquiries or a virtual coffee.''',
-                              style: bodyTextStyle2,
-                            ),
-                          )
-                        ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: isLargerThanMobile ? 80 : 0),
+                child: SizedBox(
+                  width: 720,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Let\'s Chat!',
+                        style: headlineTextStyle,
                       ),
-                    ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      SizedBox(
+                        // width: 1800,
+                        // height: 200,
+                        // color: Colors.black,
+                        child: Text(
+                          '''Looking forward to meet you and learn more about your business and the design challenges it's facing. Feel free to get in touch for inquiries or a virtual coffee.''',
+                          style: bodyTextStyle2,
+                        ),
+                      )
+                    ],
                   ),
-
-                  // desc text
-                ],
+                ),
               ),
             ),
 
             // v-space
-            const VerticalSpace(
-              size: 150,
+             VerticalSpace(
+              size: isLargerThanMobile ? 100 : 0,
             ),
 
             UiScaler(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 80),
+                padding:  EdgeInsets.only(left: isLargerThanMobile ? 80 : 30),
                 child: SizedBox(
                   height: isLargerThanTab ? 200 : 400,
                   child: Column(
