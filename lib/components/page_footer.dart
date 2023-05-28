@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'components.dart';
 
-class PageFooter extends StatelessWidget {
+class PageFooter extends StatefulWidget {
   const PageFooter({
     super.key,
   });
+
+  @override
+  State<PageFooter> createState() => _PageFooterState();
+}
+
+class _PageFooterState extends State<PageFooter> {
+  Color hoverColor = Colors.grey;
 
   @override
   Widget build(BuildContext context) {
@@ -59,16 +67,7 @@ class PageFooter extends StatelessWidget {
                         const VerticalSpace(
                           size: 45,
                         ),
-                        Row(
-                          children: [
-                            CustomButton(
-                              width: 150,
-                              onPressed: () {},
-                              borderRadius: 30,
-                              child: const Text('Get in touch'),
-                            ),
-                          ],
-                        )
+                        const ConnectMe()
                       ],
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_breakpoints.dart';
 
 import '../../../components/components.dart';
 
@@ -9,6 +10,23 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsiveBreakPoint = ResponsiveBreakpoints.of(context);
+
+    final isLargerThanTab = responsiveBreakPoint.largerThan(TABLET);
+    final isLargerThanMobile = responsiveBreakPoint.largerThan(MOBILE);
+
+    double vSpacing() {
+      if (isLargerThanTab) return 200;
+      if (isLargerThanMobile) return 130;
+      return 0;
+    }
+
+    double horizPadding() {
+      if (isLargerThanMobile) return 100;
+      if (isLargerThanTab) return 150;
+      return 50;
+    }
+
     return Scaffold(
       backgroundColor: backgroundPrimary,
       body: SingleChildScrollView(
@@ -20,9 +38,11 @@ class AboutPage extends StatelessWidget {
               size: 50,
             ),
             const CustomMenuBar(),
-            const VerticalSpace(
-              size: 300,
+
+            VerticalSpace(
+              size: isLargerThanMobile ? 300 : 100,
             ),
+
             UiScaler(
               alignment: Alignment.topCenter,
               child: Wrap(
@@ -43,11 +63,7 @@ class AboutPage extends StatelessWidget {
                           const SizedBox(
                             height: 30,
                           ),
-                          Container(
-                            width: 400,
-                            height: 100,
-                            color: Colors.black,
-                          )
+                          const ConnectMe()
                         ],
                       ),
                     ),
@@ -74,12 +90,10 @@ I love simplicity, have an allergy for bullsh*t and always strive to be a good h
             ),
 
             // v-space
-            const VerticalSpace(
-              size: 250,
-            ),
+            VerticalSpace(size: vSpacing()),
 
             Padding(
-              padding: const EdgeInsets.only(left: 135.0),
+              padding: EdgeInsets.only(left: horizPadding()),
               child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(

@@ -7,3 +7,5 @@ export 'ui_scaler.dart';
 export 'menu_bar.dart';
 export 'page_footer.dart';
 export 'button.dart';
+export 'hover_icon.dart';
+export 'connect_me.dart';
