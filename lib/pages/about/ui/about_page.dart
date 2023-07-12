@@ -50,7 +50,7 @@ class AboutPage extends StatelessWidget {
                 runSpacing: 50,
                 children: [
                   Padding(
-                    padding:  EdgeInsets.only(left: isLargerThanMobile ? 30 : 0),
+                    padding: EdgeInsets.only(left: isLargerThanMobile ? 30 : 0),
                     child: SizedBox(
                       width: 560,
                       child: Column(
@@ -71,13 +71,22 @@ class AboutPage extends StatelessWidget {
 
                   // desc text
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: isLargerThanMobile ? 30 : 0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: isLargerThanMobile ? 30 : 0),
                     child: SizedBox(
                       // height: 500,
                       width: 600,
                       // color: Colors.black,
                       child: Text(
-                        '''I am the father of the most beautiful twin daughters in the world. I live in the Netherlands and I love to ride my motorcyle to unwind.\n\nA long time ago I started my career as a psychologist, but quickly realized that designing digital products is my true passion. My master's in psychology turned out to be a tremendous help with understanding human behavior and how to best design for it; simplicity is the key to great user experiences.\n\nI have around 16 years experience designing digital products. I co-founded two companies called Bread&Pepper and Gibbon. The last one got acquired by Degreed, and for several years I have enjoyed leading and growing the product design team of this edtech unicorn.\n\nI love simplicity, have an allergy for bullsh*t and always strive to be a good human. If you think I can help you with any project or coaching, don't hesitate to get in touch.''',
+                        '''Oh, Hi there! A little bird told me you'd like to know more about me, well come a lil bit closer 🌚. I live in Nigeria, in the city that dosen't sleep, Lagos! So best believe, i'm built different💪🏽... trust me.
+               
+A long time ago I started my career as a mechanical engineer, but quickly realized that developing software is my true passion. My degree in mechanical engineering turned out to be a tremendous help equipping me with strong problem-solving abilities, analytical thinking, and attention to detail.
+
+I have around 4 years experience developing mobile apps. I co-founded two companies called Bread&Pepper and Gibbon. The last one got acquired by Degreed, and for several years I have enjoyed leading and growing the product design team of this edtech unicorn.
+
+I love the simple things of life. I am a cinephile, music and anime lover, on my free days, if you don't spot me with a friend I am most likely indulging in one of those. 
+
+If you think I can help you with any project or coaching, don't hesitate to get in touch.''',
                         style: bodyTextStyle2,
                         textAlign: TextAlign.start,
                       ),

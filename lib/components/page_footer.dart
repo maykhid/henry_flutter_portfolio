@@ -61,7 +61,7 @@ class _PageFooterState extends State<PageFooter> {
                     child: Column(
                       children: [
                         Text(
-                          'Simplicity is the key to great user experiences. Let me help your company design a simpler user experience to achieve better outcomes.',
+                          'Unlock the power of seamless interactions. Let my expertise in mobile development amplify your user experiences, optimizing engagement and maximizing results.',
                           style: bodyTextStyle,
                         ),
                         const VerticalSpace(

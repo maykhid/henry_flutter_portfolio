@@ -72,14 +72,18 @@ class _CustomMenuBarState extends State<CustomMenuBar> {
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
                 onTap: () => Navigator.popUntil(
-                    context, ModalRoute.withName(Navigator.defaultRouteName)),
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                ),
                 // child: Text(
                 //   "print(HENRY)",
                 //   style: titleTextStyle,
                 // ),
                 child: const Name(),
               ),
-              isMobile || isBetweenMobileAndTab ? hamOrMenu() : const MenuItems(),
+              isMobile || isBetweenMobileAndTab
+                  ? hamOrMenu()
+                  : const MenuItems(),
             ],
           ),
         ),
@@ -154,9 +158,9 @@ class Name extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: '{ ',
-        style: const TextStyle(fontSize: 45, color: Colors.black),
-        children: [TextSpan(text: 'HENRY', style: titleTextStyle)],
+        text: 'print',
+        style: const TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w100),
+        children: [TextSpan(text: '(\'Henry\')', style: titleTextStyle)],
       ),
     );
   }

@@ -68,13 +68,28 @@ class HomePage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(left: isLessThanTab ? 10 : 100),
                 child: Wrap(
-                  spacing: 50,
+                  spacing: 70,
                   runSpacing: isLessThanTab ? 20 : 40,
                   runAlignment: WrapAlignment.start,
                   children: const [
-                    MyAbility(),
-                    MyAbility(),
-                    MyAbility(),
+
+                    MyAbility(
+                      abilityTitle: 'Mobile App Development',
+                      ability:
+                          'My primary role as a mobile developer is to develop high-quality mobile applications. By leveraging technical skills, I can contribute to building robust, user-friendly, and performant mobile apps that meet the team\'s or company\'s objectives.',
+                    ),
+                    MyAbility(
+                      abilityTitle: 'Problem Solving',
+                      ability:
+                          'Mobile development often involves overcoming challenges and solving complex problems. I use my analytical and problem-solving skills to identify and resolve issues in the code, optimize performance, and enhance the user experience. ',
+                    ),
+                    
+                     MyAbility(
+                      abilityTitle: 'Collaborate and Communicate',
+                      ability:
+                          'Effective collaboration and communication are key to successful teamwork. Actively participate in discussions, brainstorming sessions, and code reviews. Share my ideas, provide constructive feedback, and engage in open dialogue with team members. ',
+                    ),
+                   
                   ],
                 ),
               ),
@@ -216,8 +231,13 @@ class ProductImage extends StatelessWidget {
 
 class MyAbility extends StatelessWidget {
   const MyAbility({
+    required this.abilityTitle,
+    required this.ability,
     super.key,
   });
+
+  final String abilityTitle;
+  final String ability;
 
   @override
   Widget build(BuildContext context) {
@@ -241,15 +261,16 @@ class MyAbility extends StatelessWidget {
               size: 18,
             ),
             Text(
-              'Simplify & redesign products',
+              abilityTitle,
               style: subHeadline,
             ),
             const VerticalSpace(
               size: 12,
             ),
             Text(
-              'Often products becomes more complex than needed due to the fast pace of startups. Simplifying and redesigning the user experience can make the product more effective.',
+              ability,
               style: bodyTextStyle,
+              // textAlign: TextAlign.justify,
             ),
           ],
         ),

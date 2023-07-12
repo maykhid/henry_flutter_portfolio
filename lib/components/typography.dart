@@ -5,8 +5,8 @@ import 'color.dart';
 TextStyle titleTextStyle = const TextStyle(
   fontSize: 30,
   color: textPrimary,
-  letterSpacing: 3,
-  fontWeight: FontWeight.w500,
+  letterSpacing: 1,
+  fontWeight: FontWeight.w600,
   // fontFamily: 'Hanken Grotesk',
 );
 
